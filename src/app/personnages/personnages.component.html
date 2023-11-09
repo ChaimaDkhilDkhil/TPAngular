@@ -1,0 +1,50 @@
+<!-- index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <title>Personnages</title>
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4" *ngFor="let personnage of tabPersonnages">
+        <div class="card text-center">
+          <h5 class="card-title">{{ personnage.nom }}</h5>
+          <div class="card-header">
+            <img [src]="personnage.Image" alt="{{ personnage.nom }}" class="rounded-circle" style="width: 100px; height: 100px;">
+          </div>
+          <div class="card-body">
+
+            <p class="card-text">Nombre: {{ personnage.nb }}</p>
+            <p class="card-text">
+              <span class="badge rounded-pill bg-secondary">{{ personnage.nb }}</span>
+              Abonnés
+            </p>
+          </div>
+          <div class="card-footer">
+            <button class="btn btn-primary">
+              <i class="fas fa-pencil-alt"></i> s'abonner
+            </button>
+            <p class="card-text">
+              <span class="badge rounded-pill bg-warning text-dark">
+                {{ personnage.majeur ? 'Majeur' : 'Mineur' }}
+              </span>
+            </p>
+           
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Ajoutez les liens vers Bootstrap et Font Awesome dans le fichier index.html -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <script src="https://kit.fontawesome.com/your-fontawesome-kit.js"></script>
+</body>
+</html>
